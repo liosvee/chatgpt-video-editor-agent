@@ -1,0 +1,14 @@
+interface:
+  display_name: Video Editor Agent
+  short_description: Plan, narrate, caption and assemble YouTube videos
+  default_prompt: Use $video-editor-agent to produce or resume my video, checking
+    approved stages and costs before generating media.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
