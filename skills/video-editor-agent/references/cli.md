@@ -50,3 +50,7 @@ python3 <skill>/scripts/test_pipeline.py
 ```
 
 Tests exercise exact text preservation, stale approval detection, unknown versus confirmed costs, caption boundaries, undersized visuals, invalid clip trims, real rendering/decoding, overwrite protection and local review output. Synthetic media is built in a temporary directory; no narration generation, paid calls or source media is committed.
+
+## Production learning
+
+The bundled [evolution workflow](../evolution/WORKFLOW.md) adds begin, refresh, apply, verify, gate and sync commands. It travels with the installable skill, including its offline tests. Use an authenticated matching Git checkout or the connected GitHub plugin to persist only sanitized knowledge.

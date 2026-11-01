@@ -322,7 +322,12 @@ def main():
         elif a.command == "validate":
             result = validate(a.source, a.allow_preview)
             result.pop("spec")
-        elif a.command == "render": result = render(a.source, a.out, a.allow_preview)
+        elif a.command == "render":
+            import sys
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+            from evolution.learn import verify_for_file
+            verify_for_file(a.source)
+            result = render(a.source, a.out, a.allow_preview)
         elif a.command == "qa": result = qa(a.source, a.out, a.expected_duration)
         else: result = review(a.source, a.out)
     except (ValueError, OSError, KeyError, TypeError) as exc:

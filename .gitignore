@@ -7,3 +7,9 @@ projects/
 *.mp4
 *.mp3
 *.wav
+
+# Local research, receipts and transient learning locks
+**/.evolution/
+**/knowledge/.lock
+**/knowledge/*.tmp
+__pycache__/

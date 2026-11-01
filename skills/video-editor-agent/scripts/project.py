@@ -51,6 +51,11 @@ def record(root, stage, artifact, approved=False, evidence=None):
         raise ValueError("Artifact must be an existing file.")
     if approved and not evidence:
         raise ValueError("Approved status requires actual user approval evidence.")
+    if stage in {"narration", "visuals", "timeline", "render"}:
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from evolution.learn import verify_if_started
+        verify_if_started(root)
     state = read(root / "project.json")
     old = state["stages"].get(stage)
     sha = digest(artifact)

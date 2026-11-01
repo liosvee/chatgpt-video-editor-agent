@@ -5,6 +5,11 @@ description: Produce and revise faceless long-form YouTube videos or assemble su
 
 # Video Editor Agent
 
+## Learning before each new video
+
+For a new production, follow [the shared learning workflow](evolution/WORKFLOW.md) after intake establishes the niche. Read the active run's brief before drafting. Prepare an original script, thumbnail plan, hashtags, tags, description and storyboard, addressing the applicable rules for all six facets. Apply the findings with an artifact-bound receipt and verify before narration, paid media or render commands. After retiming or revising bound artifacts, re-apply and verify; preserve existing approvals. A resumed production uses its existing research run. Unavailable observations remain explicit gaps.
+
+
 Run production using connected capabilities and local media tools. This is an original ChatGPT adaptation informed by [krusemediallc/video-editor-agent](https://github.com/krusemediallc/video-editor-agent), not a vendored copy or feature-parity claim. Read [capabilities.md](references/capabilities.md) for supported lanes. Actual rendering requires Work with execution tools.
 
 ## Start or resume
