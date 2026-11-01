@@ -2,10 +2,8 @@
 """Bounded, read-only discovery through the reviewed Agent-Reach v1 JSON envelope."""
 import argparse
 import json
-from pathlib import Path
 import shutil
 import subprocess
-import sys
 
 if __package__:
     from .learn import Learning, digest, now, read, require, text, write

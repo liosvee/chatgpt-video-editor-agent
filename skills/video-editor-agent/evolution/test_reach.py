@@ -1,5 +1,4 @@
 """No network, installation, credentials or paid tools."""
-import importlib.util
 import json
 from pathlib import Path
 import subprocess

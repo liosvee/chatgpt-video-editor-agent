@@ -1,5 +1,4 @@
 """Synthetic offline fixtures: these are not live analytics or creative recommendations."""
-import copy
 from datetime import timedelta
 import importlib.util
 import json
@@ -302,6 +301,14 @@ class LearningTests(unittest.TestCase):
             target.write_text('{"changed": true}')
             with self.assertRaisesRegex(ValueError, "Changed evidence/artifact"):
                 learn.verify_for_file(target)
+
+    def test_equivalent_relative_input_paths_are_accepted(self):
+        self.engine.refresh(self.project, self.data)
+        plan = self.plan()
+        plan["facets"]["script"]["artifact"] = "./script.md"
+        self.engine.apply(self.project, plan)
+        with patch.object(learn, "Learning", return_value=self.engine):
+            self.assertEqual(learn.verify_for_file(self.project / "script.md")["status"], "verified")
 
     def test_sync_without_git_records_pending(self):
         self.engine.refresh(self.project, self.data)

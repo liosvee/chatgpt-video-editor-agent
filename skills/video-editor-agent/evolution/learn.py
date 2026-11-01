@@ -107,7 +107,7 @@ def lock(folder):
     try:
         fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600)
     except FileExistsError:
-        raise ValueError("Learning update already in progress. Inspect a stranded .lock before recovery.")
+        raise ValueError("Learning update already in progress. Inspect a stranded .lock before recovery.") from None
     try:
         os.close(fd)
         yield
@@ -305,10 +305,11 @@ class Learning:
             write(folder / "sources.json", files)
             brief = ["# Learning brief", "", json.dumps(run["scope"], ensure_ascii=False), "", knowledge["limits"]]
             for facet in FACETS:
-                brief += ["", "## " + facet, "Observed in %s of %s sampled videos." % (coverage[facet], len(top))]
+                brief += ["", "## " + facet, f"Observed in {coverage[facet]} of {len(top)} sampled videos."]
                 applicable = [r for r in rules.values() if r["facet"] == facet]
                 for r in applicable:
-                    brief += ["- %s%s: %s" % (r["id"], " (carried over; original expiry applies)" if r["carried_over"] else "", r["application"])]
+                    carried = " (carried over; original expiry applies)" if r["carried_over"] else ""
+                    brief += [f"- {r['id']}{carried}: {r['application']}"]
                 if not applicable:
                     brief.append("No active rule. Use original editorial judgement and record the evidence gap.")
             brief += ["", "Review hypotheses in knowledge.json as experiments only. Never treat them as established defaults."]
@@ -451,7 +452,7 @@ def verify_for_file(filename):
             engine = Learning()
             result = engine.verify(parent)
             receipt = read(engine.current(parent)[1] / "application.json")
-            require(str(filename.relative_to(parent)) in receipt["artifacts"],
+            require(any((parent / relative).resolve() == filename for relative in receipt["artifacts"]),
                     "Production input is not bound to the learning receipt; add it to production_inputs and re-apply.")
             return result
     return {"status": "legacy_project"}
