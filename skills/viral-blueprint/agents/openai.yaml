@@ -1,0 +1,12 @@
+interface:
+  display_name: Viral Blueprint
+  short_description: Turn a niche's most-viewed videos into an original, better next video
+  default_prompt: Use $viral-blueprint to find the most-viewed videos in my niche with vidIQ, show
+    the top picks, and build an original script, title and metadata from their blueprint.
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
