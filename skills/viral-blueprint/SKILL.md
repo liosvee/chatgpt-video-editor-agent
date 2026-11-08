@@ -7,10 +7,15 @@ description: >
   videos in my niche and make a better version", "what's blowing up in my niche — copy the
   formula", "use the top video as a blueprint", "remake the best performer but better",
   "reverse-engineer the viral script/title/tags", or "next video based on what's working".
-  Not for a plain topic or script with no reference research (go straight to video-editor-agent), and never for re-uploading or closely paraphrasing someone else's video.
+  Runs FIRST for every new video or episode, before any script is written. Skip only when
+  revising or resuming an existing project (reuse its saved research) or when the user opts out.
+  Never for re-uploading or closely paraphrasing someone else's video.
 ---
 
 # viral-blueprint — learn from the niche's winners, ship something better
+
+**This is the first stage of every new production.** Resumes and revisions reuse the project's
+saved `viral/` files instead of re-running it; the user can opt out for a single video.
 
 Eight steps: **search → select → check script → script blueprint → check title → title
 blueprint → metadata blueprint → improved video**. vidIQ does the research through its MCP
