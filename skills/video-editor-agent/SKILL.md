@@ -23,6 +23,7 @@ Run production using connected capabilities and local media tools. This is an or
 
 ## Research and script
 
+- To model the next video on the niche's most-viewed videos ("find what's viral and make a better version"), use the sibling **viral-blueprint** skill first, then return here with its approved script and metadata.
 - Use vidIQ's topic/keyword workflow when requested. Check credits; return multiple original topics with evidence of demand, competition, comparable outliers and channel fit. Label unavailable metrics. Never promise virality or invent search volume.
 - Let the user choose when the workflow calls for topic selection. Carry previous selections forward.
 - Divide long-form outlines into approximately 2–3 minute chapters. Count narration only. Preserve the exact approved script. Do not stretch 1,230 words to meet a 10–12 minute target without agreement.
